@@ -1,0 +1,60 @@
+<p>Актив под номером {{asset_id}} отсутствует в базе.</p>
+{{#if _isAdmin}}    
+    <form name="addAsset_form" method="POST" action="/add_asset" onsubmit="return false">
+        <p>... будет присвоен id = <input name="asset_id" id="asset_id" type="number" value="{{asset_id}}" readonly ></p>
+        <p><b>Введите модель актива</b><br>
+        <input type="text" size="54" name="Модель_актива" id="asset_name">
+        </p>
+
+        <p>Введите заметку: <br>
+            <textarea name="Заметка" cols="40" rows="3" id="description_asset"></textarea>
+        </p>
+        
+        <p>Укажите дату приобретения:
+            <input type="date" name="Дата" id="asset_date">
+        </p>
+
+        <p>Введите стоимость в рублях: 
+            <input type="number" size="12" name="Стоимость" id="asset_cost">
+        </p>
+
+        <p>Определите категорию и тип актива:
+            <select id="asset_category" name="asset_category">
+                <!--<option value="">выберите категорию</option>-->
+                {{#each category}}
+                    <option value="{{this.c_uid}}">{{this.c_title}}</option>
+                {{/each}}
+            </select>
+            <select id="asset_type" name="asset_type">
+                <option value="">выберите тип</option>
+            </select> 
+        </p>
+
+        <p>Укажите месторасположение:
+            <select id="asset_floor" name="asset_floor">
+                <!--<option value="">выберите этаж</option>-->
+                {{#each location}}
+                    <option value="{{this.l_uid}}">{{this.l_title}}</option>
+                {{/each}}
+            </select>
+            <select id="asset_location" name="asset_location">
+                <option value="">выберите кабинет</option>
+            </select> 
+        </p>
+
+        <p>
+
+        </p>
+
+        <p>
+            <button class="aur_btn_accept" id="btn_accept">Зарегистрировать</button>
+            <input type="reset" value="Очистить поля" class="aur_btn_refuse">
+        </p>
+    </form>
+    <script defer src="./script/dropdownListScript.js"></script>
+    <script defer src="./script/addNewAsset.js"></script>
+{{else}}
+    <h3>Авторизуйтесь в системе, для регистрации актива.</h3> 
+    <p><button id="btnAuthorization" class="aur_btn_accept">Авторизоваться</button></p>
+    <script defer src="./script/authorization.js"></script>
+{{/if}}    

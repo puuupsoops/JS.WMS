@@ -1,0 +1,41 @@
+    <div id="main_block">
+        <div id="left_side" class="_container">
+            {{#if _isAdmin}} 
+            <div id="id_place">id: {{object_id}}</div>
+            {{/if}}
+            <div id="horizontal_line"></div>
+            <section id="info_place">
+                <h3>{{object_type}} {{object_name}}</h3>
+                    <div id="description">
+                    <fieldset>
+                        <legend>Заметки:</legend>
+                        <p>{{object_description}}</p>
+                    </fieldset>
+                    </div>
+                    <div id="data_place">
+                        <ul>
+                        <li><img src="./icons/calendar.png" width="48px" height="48px">{{object_start_use_data}} |</li><!--Дата начала эксплуатации-->
+                        <li>{{object_in_work}} дней <img src="./icons/timer.png" width="48px" height="48px"></li><!--количество дней прошло (цвет: зеленый: на гарантии, желтый: отработал заявленный срок: красный: привысил срок гарантии в 2 раза-->
+                        </ul>
+                    </div>
+                <p><b>Примерная стоимость: </b> {{object_cost}} ₽ </p>
+                <p><b>Класс объекта: </b> <a href="#">{{object_class}}</a> :: <a href="#">{{object_type}}</a></p>
+                <p><b>Локация: </b> <a href="#">{{object_location}}</a> :: <a href="#">{{object_room}}</a></p>
+                {{#if _isAdmin}} 
+                <div id="owner_place">
+                    <ul>
+                    <li><b>Владелец объекта:</b></li>
+                    <li><button>Личная карточка</button></li>
+                    </ul>
+                </div>
+                <button>Технические характеристики устройства</button>
+                {{/if}}
+            </section>
+        </div>  
+        <div id="right_side" class="_container">
+
+            <section id="img_place">
+                <img src="./img/{{object_image_path}}">
+            </section>
+            </div>
+    </div>

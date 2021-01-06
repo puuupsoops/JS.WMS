@@ -1,0 +1,27 @@
+<div id="main_block">
+        <p>HELLO!!!!! РЕСУРС В РАЗРАБОТКЕ!!!!</p>
+    </div>
+{{#if _isAdmin}} 
+
+     <section id="dashboard_office_card">
+    {{#each _office}}     
+        <div class="dashboard_main_cards" id="dashboard_office_{{this.uid}}">
+            <p>{{this.alias}}</p>
+
+            <p>{{this.address}}</p>
+
+            <div class="dashboard_main_cards_data">
+            <ul>
+                <li title="Количество активных ассетов"><img src="./icons/gear.png">{{this.activeAssets}}</li>
+                <li title="Количество сотрудников"><img src="./icons/user.png">{{this.employeesCount}}</li>
+            </ul>
+            </div>
+        </div>
+    {{/each}}
+    </section>
+
+{{else}}
+    <h3>Авторизуйтесь в системе, для регистрации актива.</h3> 
+    <p><button id="btnAuthorization" class="aur_btn_accept">Авторизоваться</button></p>
+    <script defer src="./script/authorization.js"></script>
+{{/if}}  

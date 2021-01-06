@@ -1,0 +1,17 @@
+{
+  "name": "aur",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "polshakov_vi@alrf.ru <45201a@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "pg": "^8.3.0"
+  }
+}
