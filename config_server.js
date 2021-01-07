@@ -1,17 +1,17 @@
-const serverConfig = {
-    host: "10.10.0.249",
+const SERVER_CONFIG = {
+    host: "x.x.x.x",
     port: 3000
 };
 
-const dbConfig = {
+const DB_CONFIG = {
     user: 'admin', //user name
-    host: '10.10.0.249', // host address
-    dbName: 'aur_db', // data base name
-    password: 'admin1234', // data base pass
+    host: 'x.x.x.x', // host address
+    dbName: 'example', // data base name
+    password: '', // data base pass
 };
 
-const appConfig = {
+const APP_CONFIG = {
     adminPass = '12345678'
 }
 
-export {serverConfig , dbConfig, appConfig};
+export {SERVER_CONFIG , DB_CONFIG, APP_CONFIG};

@@ -1,4 +1,4 @@
-import {serverConfig, dbConfig, appConfig} from './config_server';
+import {SERVER_CONFIG, DB_CONFIG, APP_CONFIG} from './config_server';
 import {queryList} from './query_list';
 
 const express = require('express');
@@ -13,15 +13,15 @@ const objFileView = 'main'; //страница с выводом данных о
 const addAssetFileView = 'add_asset'; //страница для регистрации ассета
 const responseFileWiew = 'response_file'; //файл заглушка для ответов на запросы
 
-const hostname = serverConfig.host;
-const port = serverConfig.port;
+const hostname = SERVER_CONFIG.host;
+const port = SERVER_CONFIG.port;
 
 const _statusResponse = {
     SUCCESS: true,
     FAIL: false,
 };
 
-const _password = appConfig.adminPass; //пароль для запроса с кнопки авторизации
+const _password = APP_CONFIG.adminPass; //пароль для запроса с кнопки авторизации
 
 const _isAuthorisated = { //для куки файла авторизации
     CONFIRM: true,
@@ -29,10 +29,10 @@ const _isAuthorisated = { //для куки файла авторизации
 };
 
 const pool = new Pool({ //подключение к базе данных pgsql
-    user: dbConfig.user,
-    host: dbConfig.user,
-    database: dbConfig.dbName,
-    password: dbConfig.password,
+    user: DB_CONFIG.user,
+    host: DB_CONFIG.user,
+    database: DB_CONFIG.dbName,
+    password: DB_CONFIG.password,
     port: 5432,
     max: 20,
     idleTimeoutMillis: 0,
