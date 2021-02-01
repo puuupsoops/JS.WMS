@@ -1,4 +1,4 @@
-# WMS
+# Warehouse Management System
 Самописный WMS для учета оборудования по qr кодам.
 
 version: alpha 0.0.1 / prototype.
